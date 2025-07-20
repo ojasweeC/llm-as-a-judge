@@ -1,7 +1,7 @@
 import streamlit as st
 from dotenv import load_dotenv, find_dotenv
 from langchain_openai import ChatOpenAI
-from langchain_community.chat_models import ChatOllama
+from langchain_together import ChatTogether
 from langchain_core.prompts import ChatPromptTemplate
 from utils import read_document
 
@@ -17,21 +17,21 @@ col2.write(f"{llm2_model} will evaluate the quality of {llm1_model}'s response b
 load_dotenv(find_dotenv())
 
 llm1 = ChatOpenAI(model_name="gpt-4")
-llm2 = ChatOllama(model="llama3:instruct")
+llm2 = ChatTogether(model="meta-llama/Llama-3-70b-chat-hf")
 
 # initialize session state
-if "llama3_response" not in st.session_state:
-    st.session_state.llama3_response = None
+if "llama_response" not in st.session_state:
+    st.session_state.llama_response = None
 if "gpt4_response" not in st.session_state:
     st.session_state.gpt4_response = None
 
 # test that models are working
-col1.text_input("Test:", key="llama3_question_input")
+col1.text_input("Test:", key="llama_question_input")
 if col1.button(f"Ask {llm1_model}"):
-    output = llm1.invoke(st.session_state.get("llama3_question_input", "How are you?")).content
-    st.session_state.llama3_response = output
-if st.session_state.llama3_response:
-    col1.write(f"👾 {st.session_state.llama3_response}")
+    output = llm1.invoke(st.session_state.get("llama_question_input", "How are you?")).content
+    st.session_state.llama_response = output
+if st.session_state.llama_response:
+    col1.write(f"👾 {st.session_state.llama_response}")
 
 col2.text_input("Test:", key="gpt4_question_input")
 if col2.button(f"Ask {llm2_model}"):
