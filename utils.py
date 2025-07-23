@@ -22,7 +22,7 @@ def read_document(uploaded_file):
 
 def display_llm_header(model_name, is_judge=False):
     role = "Evaluator" if is_judge else "Respondent"
-    display_name = model_name if model_name else "---"
+    display_name = model_name if model_name else "Choose your own LLM"
     st.markdown(f"""
     <div style="text-align: center; font-size: 20px; font-weight: 600; margin-top: 10px">{display_name}</div>
     <div style="text-align: center; font-size: 13px; color: #777;">{role}</div>
