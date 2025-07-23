@@ -4,5 +4,6 @@ langchain
 langchain-openai
 langchain-community
 langchain-together
+langchain-anthropic
 openai
 pypdf
