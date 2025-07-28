@@ -1,0 +1,22 @@
+[
+  {
+    "doc_type": "research",
+    "questions": [
+      "What is the main research question?",
+      "How is the methodology justified?"
+    ]
+  },
+  {
+    "doc_type": "HR",
+    "questions": [
+      "What qualifications does the candidate have?"
+    ]
+  },
+  {
+    "doc_type": "legal",
+    "questions": [
+      "What are the obligations outlined in this contract?",
+      "Are there any unclear or risky clauses?"
+    ]
+  }
+]
