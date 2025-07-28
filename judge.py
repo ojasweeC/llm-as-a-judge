@@ -10,7 +10,7 @@ st.set_page_config(layout="wide")
 
 st.markdown("""
 <div style='text-align: center;'>
-    <h1>Can an LLM judge another LLM?</h1>
+    <h1>Accuracy Evaluation Using LLM-as-a-Judge</h1>
 </div>
 """, unsafe_allow_html=True)
 
